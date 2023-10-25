@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "f8a0c22d-478b-4db0-bc14-2a3aacd6e7c9",
+		"name": "Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30563820"
+	},
+	"item": [
+		{
+			"name": "Index todo_tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/todo_tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Create todo_tasks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "task",
+							"value": "Task for tomorrow",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://localhost:3000/todo_tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Show todo_tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/todo_tasks/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete todo_tasks",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:3000/todo_tasks/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Update todo_tasks",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "task",
+							"value": "tasktom",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:3000/todo_tasks/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Reorder Todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"todo_tasks_attributes\": [\n        {\n            \"id\": 1,\n            \"order\": 2\n        },\n        {\n            \"id\": 3,\n            \"order\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/users/update_todo_order"
+			},
+			"response": []
+		}
+	]
+}
